@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="0.8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/PairedBtn"
+        android:layout_width="174dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Show Paired Device"
+        app:layout_constraintEnd_toStartOf="@+id/pmOne"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bluetoothStatus" />
+
+    <Button
+        android:id="@+id/discoverbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Discover New Device"
+        app:layout_constraintEnd_toStartOf="@+id/pmOne"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PairedBtn" />
+
+    <TextView
+        android:id="@+id/bluetoothStatus"
+        android:layout_width="102dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:text="bluetoothStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start" />
+
+    <ListView
+        android:id="@+id/discover"
+        android:layout_width="173dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/discoverbtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="175dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/pmOne"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search" />
+
+    <Button
+        android:id="@+id/pmOne"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="PM1"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/discover"
+        app:layout_constraintTop_toBottomOf="@+id/pm25"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/pm25"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:text="PM2.5"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/discover"
+        app:layout_constraintTop_toBottomOf="@+id/pmTen" />
+
+    <Button
+        android:id="@+id/pmTen"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="PM10"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/discover"
+        app:layout_constraintTop_toBottomOf="@+id/CO2" />
+
+    <Button
+        android:id="@+id/CO2"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="CO2"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/discover"
+        app:layout_constraintTop_toBottomOf="@+id/temperature" />
+
+    <Button
+        android:id="@+id/temperature"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="溫度"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/discover"
+        app:layout_constraintTop_toBottomOf="@+id/humidity" />
+
+    <Button
+        android:id="@+id/humidity"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="濕度"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/discover"
+        app:layout_constraintTop_toBottomOf="@+id/avgPM25" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="73dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Start"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <Button
+        android:id="@+id/close"
+        android:layout_width="74dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:text="Close"
+        android:textSize="15dp"
+        app:layout_constraintStart_toEndOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="查詢"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineChart" />
+
+    <TextView
+        android:id="@+id/pm1Num"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toEndOf="@+id/pmOne"
+        app:layout_constraintTop_toBottomOf="@+id/pm25Num"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/pm25Num"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toEndOf="@+id/pm25"
+        app:layout_constraintTop_toBottomOf="@+id/pm10Num" />
+
+    <TextView
+        android:id="@+id/pm10Num"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toEndOf="@+id/pmTen"
+        app:layout_constraintTop_toBottomOf="@+id/CO2Num" />
+
+    <TextView
+        android:id="@+id/CO2Num"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toEndOf="@+id/CO2"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureNum" />
+
+    <TextView
+        android:id="@+id/temperatureNum"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toEndOf="@+id/temperature"
+        app:layout_constraintTop_toBottomOf="@+id/humidityNum" />
+
+    <TextView
+        android:id="@+id/humidityNum"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.281"
+        app:layout_constraintStart_toEndOf="@+id/humidity"
+        app:layout_constraintTop_toBottomOf="@+id/avgCO2" />
+
+    <TextView
+        android:id="@+id/searchDate"
+        android:layout_width="85dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/pmOne"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toEndOf="@+id/search"
+        app:layout_constraintTop_toBottomOf="@+id/lineChart" />
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="21dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@+id/temperature"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/close"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <Button
+        android:id="@+id/nowbutton"
+        android:layout_width="56dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Now"
+        app:layout_constraintBottom_toTopOf="@+id/PairedBtn"
+        app:layout_constraintEnd_toStartOf="@+id/pmOne"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/bluetoothStatus"
+        app:layout_constraintTop_toBottomOf="@+id/close"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/avgPM25"
+        android:layout_width="93dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="PM2.5平均"
+        app:layout_constraintStart_toEndOf="@+id/searchDate"
+        app:layout_constraintTop_toBottomOf="@+id/lineChart" />
+
+    <Button
+        android:id="@+id/avgCO2"
+        android:layout_width="93dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="CO2平均"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avgPM25"
+        app:layout_constraintTop_toBottomOf="@+id/lineChart" />
+
+</android.support.constraint.ConstraintLayout>
